@@ -20,3 +20,15 @@ function updateCountdown() {
   }
 const countdownInterval = setInterval(updateCountdown, 1000);
 updateCountdown();
+const video = document.querySelector('.back-video');
+const muteBtn = document.getElementById('mute-btn');
+
+muteBtn.addEventListener('click', function() {
+    if (video.muted) {
+        video.muted = false; // 소리 켜기
+        muteBtn.innerText = "🔇 Sound Off";
+    } else {
+        video.muted = true;  // 소리 끄기
+        muteBtn.innerText = "🔊 Sound On";
+    }
+});
